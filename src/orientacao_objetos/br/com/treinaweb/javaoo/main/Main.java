@@ -1,6 +1,7 @@
-package br.com.treinaweb.javaoo.main;
+package orientacao_objetos.br.com.treinaweb.javaoo.main;
 
-import br.com.treinaweb.javaoo.classes.Veiculo;
+
+import orientacao_objetos.br.com.treinaweb.javaoo.classes.Veiculo;
 
 public class Main {
 

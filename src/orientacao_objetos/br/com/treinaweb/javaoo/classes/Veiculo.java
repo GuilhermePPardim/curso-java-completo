@@ -1,6 +1,6 @@
-package br.com.treinaweb.javaoo.classes;
+package orientacao_objetos.br.com.treinaweb.javaoo.classes;
 
-import org.w3c.dom.ls.LSOutput;
+import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 
 public class Veiculo {
 
@@ -34,7 +34,7 @@ public class Veiculo {
         if (chassi.length() == 5) {
             this.chassi = chassi;
         } else {
-            throw new Exception("O chassi informado é invalido");
+           throw new ChassiInvalidoException(chassi);
         }
     }
 

@@ -7,7 +7,7 @@ public class Veiculo {
     private String nome;
     private String marca;
     private String chassi;
-    private int quatidadeRodas;
+    protected int quatidadeRodas;
     private float quatidadeCombustivel;
 
     public String getNome() {
@@ -34,7 +34,7 @@ public class Veiculo {
         if (chassi.length() == 5) {
             this.chassi = chassi;
         } else {
-           throw new ChassiInvalidoException(chassi);
+            throw new ChassiInvalidoException(chassi);
         }
     }
 
@@ -47,9 +47,6 @@ public class Veiculo {
         return quatidadeCombustivel;
     }
 
-    public void setQuatidadeCombustivel(float quatidadeCombustivel) {
-        this.quatidadeCombustivel = quatidadeCombustivel;
-    }
 
     public void ligar (){
         System.out.println("O veiculo ligou");

@@ -1,5 +1,6 @@
 package orientacao_objetos.br.com.treinaweb.javaoo.classes;
 
+import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.AbasteciemntoVeixuloLigadoexception;
 import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 
 public class Veiculo {
@@ -9,6 +10,12 @@ public class Veiculo {
     private String chassi;
     protected int quatidadeRodas;
     private float quatidadeCombustivel;
+    private boolean ligado;
+
+    public Veiculo() {
+        this.ligado = false;
+
+    }
 
     public String getNome() {
         return nome;
@@ -30,7 +37,7 @@ public class Veiculo {
         return chassi;
     }
 
-    public void setChassi(String chassi) throws Exception{
+    public void setChassi(String chassi) throws ChassiInvalidoException{
         if (chassi.length() == 5) {
             this.chassi = chassi;
         } else {
@@ -47,18 +54,30 @@ public class Veiculo {
         return quatidadeCombustivel;
     }
 
+    public boolean isLigado() {
+        return ligado;
+    }
 
     public void ligar (){
+        this.ligado = true;
         System.out.println("O veiculo ligou");
 
     }
 
     public void desligar (){
+        this.ligado = false;
         System.out.println("O veiculo desligou");
     }
 
-    public void abastecer(float litros){
-        quatidadeCombustivel += litros;
+    public void abastecer(float litros) throws AbasteciemntoVeixuloLigadoexception{
+        if (!this.ligado){
+            quatidadeCombustivel += litros;
+
+        } else {
+            throw new AbasteciemntoVeixuloLigadoexception();
+
+        }
+
     }
 
 

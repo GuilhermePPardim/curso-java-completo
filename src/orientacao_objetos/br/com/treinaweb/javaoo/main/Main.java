@@ -21,12 +21,14 @@ public class Main {
             System.out.println(String.format("O veiculo %s está ligado? %b", corsa.getNome(), corsa.isLigado()));
             corsa.abastecer(10);
             corsa.ligar();
+            corsa.acelerar();
+            System.out.println(String.format("Velocidade atual do veiculo : %f", corsa.getVelocidade()));
+            corsa.freiar();
+            System.out.println(String.format("Velocidade atual do veiculo : %f", corsa.getVelocidade()));
             corsa.abastecer(10);
             Carro celta =new Carro();
             celta.ligar();
-            Moto fazer = new Moto();
-            fazer.setNome("Fazer");
-            fazer.setMarca("YAMAHA");
+
 
 
 

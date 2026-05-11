@@ -1,7 +1,9 @@
 package orientacao_objetos.br.com.treinaweb.javaoo.classes;
 
 import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.AbasteciemntoVeixuloLigadoexception;
+import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.AcelerarVeiculoLigadoexception;
 import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
+import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoDesligadoExeception;
 
 public class Veiculo {
 
@@ -11,9 +13,11 @@ public class Veiculo {
     protected int quatidadeRodas;
     private float quatidadeCombustivel;
     private boolean ligado;
+    protected float velocidade;
 
     public Veiculo() {
         this.ligado = false;
+        this.velocidade = 0;
 
     }
 
@@ -58,18 +62,24 @@ public class Veiculo {
         return ligado;
     }
 
-    public void ligar (){
+    public float getVelocidade() {
+        return velocidade;
+    }
+
+    public final void ligar (){
         this.ligado = true;
+        this.velocidade = 0;
         System.out.println("O veiculo ligou");
 
     }
 
-    public void desligar (){
+    public final void desligar (){
         this.ligado = false;
+        this.velocidade = 0;
         System.out.println("O veiculo desligou");
     }
 
-    public void abastecer(float litros) throws AbasteciemntoVeixuloLigadoexception{
+    public final void abastecer(float litros) throws AbasteciemntoVeixuloLigadoexception{
         if (!this.ligado){
             quatidadeCombustivel += litros;
 
@@ -80,6 +90,22 @@ public class Veiculo {
 
     }
 
+    public void acelerar() throws AcelerarVeiculoLigadoexception{
+        if (this.ligado){
+            this.velocidade += 10;
+        }else
+            throw new AcelerarVeiculoLigadoexception();
+
+    }
+
+    public void  freiar() throws FrenagemVeiculoDesligadoExeception{
+        if (this.ligado){
+            this.velocidade -= 10;
+        }else {
+            throw  new FrenagemVeiculoDesligadoExeception();
+        }
+
+    }
 
 
 }

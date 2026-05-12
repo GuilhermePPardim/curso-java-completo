@@ -5,7 +5,7 @@ import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.AcelerarVeiculoLigado
 import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 import orientacao_objetos.br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoDesligadoExeception;
 
-public class Veiculo {
+public abstract class Veiculo {
 
     private String nome;
     private String marca;
@@ -106,6 +106,7 @@ public class Veiculo {
         }
 
     }
+    public abstract void preparar();
 
 
 }

@@ -30,4 +30,9 @@ public class Moto extends Veiculo {
             this.velocidade -= 3;
         }else throw new FrenagemVeiculoDesligadoExeception();
     }
+
+    @Override
+    public void preparar() {
+        System.out.println("Colocar capacete");
+    }
 }

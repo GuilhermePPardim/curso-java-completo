@@ -16,9 +16,16 @@ public class Carro extends Veiculo{
         this.quatidadeRodas = 4;
 
     }
+
+    @Override
+    public void preparar() {
+        System.out.println("Colocar cinto de segurança");
+    }
+
     public Carro(String nome, String marca){
         this.quatidadeRodas = 4;
         this.setNome(nome);
         this.setMarca(marca);
     }
+
 }

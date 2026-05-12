@@ -11,23 +11,22 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Veiculo corsa = new Carro("Corsa","GM");
+            Veiculo corsa = new Moto("Corsa","GM");
             corsa.setChassi("12345");
             corsa.abastecer(10);
-            ((Carro)corsa).setQuantidadePortas(4);
             System.out.println(corsa.getNome());
             System.out.println(corsa.getQuatidadeCombustivel());
             System.out.println(corsa.getQuatidadeRodas());
             System.out.println(String.format("O veiculo %s está ligado? %b", corsa.getNome(), corsa.isLigado()));
             corsa.abastecer(10);
+            corsa.preparar();
             corsa.ligar();
             corsa.acelerar();
             System.out.println(String.format("Velocidade atual do veiculo : %f", corsa.getVelocidade()));
             corsa.freiar();
             System.out.println(String.format("Velocidade atual do veiculo : %f", corsa.getVelocidade()));
             corsa.abastecer(10);
-            Carro celta =new Carro();
-            celta.ligar();
+
 
 
 
